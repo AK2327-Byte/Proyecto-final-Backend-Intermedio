@@ -1,0 +1,62 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook 1",
+    "content": "\\about\r\nUSE Libros;\r\n\r\nINSERT INTO Autores (nombre, apellidos) VALUES\r\n('Gabriel', 'García Márquez'),\r\n('Isabel', 'Allende'),\r\n('Mario', 'Vargas Llosa'),\r\n('Julio', 'Cortázar'),\r\n('Jorge Luis', 'Borges'),\r\n('Carlos', 'Fuentes'),\r\n('Octavio', 'Paz'),\r\n('Juan', 'Rulfo'),\r\n('Laura', 'Esquivel'),\r\n('Elena', 'Poniatowska'),\r\n('Miguel', 'de Cervantes'),\r\n('Federico', 'García Lorca'),\r\n('Arturo', 'Pérez-Reverte'),\r\n('Carlos', 'Ruiz Zafón'),\r\n('Javier', 'Marías'),\r\n('Almudena', 'Grandes'),\r\n('Rosa', 'Montero'),\r\n('Fernando', 'Aramburu'),\r\n('George', 'Orwell'),\r\n('Aldous', 'Huxley'),\r\n('Ray', 'Bradbury'),\r\n('Isaac', 'Asimov'),\r\n('Frank', 'Herbert'),\r\n('J.R.R.', 'Tolkien'),\r\n('C.S.', 'Lewis'),\r\n('J.K.', 'Rowling'),\r\n('Stephen', 'King'),\r\n('Agatha', 'Christie'),\r\n('Arthur', 'Conan Doyle'),\r\n('Edgar Allan', 'Poe'),\r\n('Mary', 'Shelley'),\r\n('Bram', 'Stoker'),\r\n('Fiódor', 'Dostoyevski'),\r\n('León', 'Tolstói'),\r\n('Franz', 'Kafka'),\r\n('Albert', 'Camus'),\r\n('Haruki', 'Murakami'),\r\n('Yuval Noah', 'Harari'),\r\n('Carl', 'Sagan'),\r\n('Robert C.', 'Martin');\r\n\r\nINSERT INTO Libros (titulo, paginas, fecha_publicacion, editorial, id_autor) VALUES\r\n('Cien años de soledad', 471, '1967-05-30', 'Sudamericana', 1),\r\n('El amor en los tiempos del cólera', 490, '1985-09-05', 'Oveja Negra', 1),\r\n('La casa de los espíritus', 442, '1982-10-01', 'Plaza & Janés', 2),\r\n('Paula', 368, '1994-11-01', 'Plaza & Janés', 2),\r\n('La ciudad y los perros', 408, '1963-10-01', 'Seix Barral', 3),\r\n('Rayuela', 600, '1963-06-28', 'Sudamericana', 4),\r\n('Ficciones', 224, '1944-01-01', 'Sur', 5),\r\n('El Aleph', 208, '1949-01-01', 'Losada', 5),\r\n('La muerte de Artemio Cruz', 316, '1962-05-01', 'Fondo de Cultura Económica', 6),\r\n('El laberinto de la soledad', 208, '1950-01-01', 'Cuadernos Americanos', 7),\r\n('Pedro Páramo', 128, '1955-03-19', 'Fondo de Cultura Económica', 8),\r\n('Como agua para chocolate', 240, '1989-01-01', 'Planeta', 9),\r\n('La noche de Tlatelolco', 282, '1971-01-01', 'Era', 10),\r\n('Don Quijote de la Mancha', 1056, '1605-01-16', 'Francisco de Robles', 11),\r\n('La casa de Bernarda Alba', 120, '1945-03-08', 'Losada', 12),\r\n('El club Dumas', 496, '1993-01-01', 'Alfaguara', 13),\r\n('La sombra del viento', 576, '2001-05-17', 'Planeta', 14),\r\n('El juego del ángel', 672, '2008-04-17', 'Planeta', 14),\r\n('Corazón tan blanco', 304, '1992-01-01', 'Anagrama', 15),\r\n('Los aires difíciles', 736, '2002-01-01', 'Tusquets', 16),\r\n('La ridícula idea de no volver a verte', 240, '2013-02-01', 'Seix Barral', 17),\r\n('Patria', 648, '2016-09-06', 'Tusquets', 18),\r\n('1984', 328, '1949-06-08', 'Secker & Warburg', 19),\r\n('Rebelión en la granja', 144, '1945-08-17', 'Secker & Warburg', 19),\r\n('Un mundo feliz', 256, '1932-01-01', 'Chatto & Windus', 20),\r\n('Fahrenheit 451', 249, '1953-10-19', 'Ballantine Books', 21),\r\n('Fundación', 255, '1951-06-01', 'Gnome Press', 22),\r\n('Dune', 688, '1965-08-01', 'Chilton Books', 23),\r\n('El Señor de los Anillos', 1178, '1954-07-29', 'Allen & Unwin', 24),\r\n('El león, la bruja y el ropero', 208, '1950-10-16', 'Geoffrey Bles', 25),\r\n('Harry Potter y la piedra filosofal', 256, '1997-06-26', 'Bloomsbury', 26),\r\n('El resplandor', 447, '1977-01-28', 'Doubleday', 27),\r\n('Asesinato en el Orient Express', 256, '1934-01-01', 'Collins Crime Club', 28),\r\n('Estudio en escarlata', 188, '1887-11-01', 'Ward Lock & Co', 29),\r\n('Narraciones extraordinarias', 320, '1845-01-01', 'Wiley & Putnam', 30),\r\n('Frankenstein', 280, '1818-01-01', 'Lackington, Hughes', 31),\r\n('Drácula', 418, '1897-05-26', 'Archibald Constable', 32),\r\n('Crimen y castigo', 671, '1866-01-01', 'El Mensajero Ruso', 33),\r\n('La metamorfosis', 112, '1915-10-01', 'Kurt Wolff Verlag', 35),\r\n('Clean Code', 464, '2008-08-01', 'Prentice Hall', 40);\r\n\r\nSELECT * FROM Autores;\r\nSELECT * FROM Libros;\r\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "CRLF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 90,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 90,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 22,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -5
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 90,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

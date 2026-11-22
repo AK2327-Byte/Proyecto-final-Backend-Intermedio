@@ -1,0 +1,62 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook 2",
+    "content": "CREATE DATABASE IF NOT EXISTS Registro\r\n  CHARACTER SET utf8mb4\r\n  COLLATE utf8mb4_unicode_ci;\r\n\r\nUSE Registro;\r\n\r\nCREATE TABLE horas (\r\n  id_registro INT AUTO_INCREMENT PRIMARY KEY,\r\n  latitud DECIMAL(10, 6) NOT NULL,\r\n  longitud DECIMAL(10, 6) NOT NULL,\r\n  hora VARCHAR(50) NOT NULL,\r\n  fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP\r\n);\r\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "CRLF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 14,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 14,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 14,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 332
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
