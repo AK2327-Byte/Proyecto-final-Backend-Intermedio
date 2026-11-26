@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Distribuidora de Libros</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f5f6fa; color: #222; }
+    header { background: #4a2574; color: #fff; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; }
+    .widget { background: rgba(255,255,255,0.15); padding: 8px 14px; border-radius: 8px; font-size: 13px; text-align: right; }
+    main { max-width: 1050px; margin: 24px auto; padding: 0 20px; }
+    input { padding: 10px 14px; width: 320px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    th { background: #0d7377; color: #fff; text-align: left; padding: 10px 12px; font-size: 14px; }
+    td { padding: 9px 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+    tr:hover { background: #f4f0f8; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h2 style="margin:0">Distribuidora de Libros</h2>
+      <small>Catálogo conectado a MySQL + Node.js (Express)</small>
+    </div>
+    <div class="widget" id="widget">Cargando ubicación y hora...</div>
+  </header>
+
+  <main>
+    <input type="text" id="buscador" placeholder="Buscar por título, autor o ID..." />
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Título</th><th>Autor</th><th>Editorial</th><th>Páginas</th><th>Publicación</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-libros"></tbody>
+    </table>
+  </main>
+
+  <script>
+    let todosLosLibros = [];
+
+    function renderTabla(lista) {
+      document.getElementById('tabla-libros').innerHTML = lista.map(l => `
+        <tr>
+          <td>${l.id_libro}</td>
+          <td><b>${l.titulo}</b></td>
+          <td>${l.autor_nombre} ${l.autor_apellidos}</td>
+          <td>${l.editorial}</td>
+          <td>${l.paginas}</td>
+          <td>${String(l.fecha_publicacion).slice(0, 10)}</td>
+        </tr>
+      `).join('');
+    }
+
+    fetch('/api/libros')
+      .then(r => r.json())
+      .then(data => { todosLosLibros = data; renderTabla(data); });
+
+    document.getElementById('buscador').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      renderTabla(todosLosLibros.filter(l =>
+        l.titulo.toLowerCase().includes(q) ||
+        (l.autor_nombre + ' ' + l.autor_apellidos).toLowerCase().includes(q) ||
+        String(l.id_libro) === q
+      ));
+    });
+
+    fetch('/api/ubicacion-hora')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('widget').innerHTML =
+          `<b>${d.city}, ${d.country}</b><br>Coords: ${d.lat}, ${d.lon}<br>Hora: ${d.hora}`;
+      });
+  </script>
+</body>
+</html>
